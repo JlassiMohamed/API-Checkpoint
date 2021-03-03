@@ -15,15 +15,16 @@ const App = () => {
       setIsLoading(false);
     });
   }, []);
-
+  const style = {
+    width: "10rem",
+    height: "10rem",
+    marginTop: "15% ",
+    marginLeft: "45%",
+  };
   return (
     <div className="list">
       {isLoading ? (
-        <Spinner
-          animation="border"
-          variant="secondary"
-          style={{ width: "10rem", height: "10rem", marginTop: "15% ", marginLeft:"45%"}}
-        />
+        <Spinner animation="border" variant="secondary" style={style} />
       ) : (
         listOfUSer.map((user) => <UserCard user={user} key={user.id} />)
       )}
